@@ -2,8 +2,6 @@
 # PA 18 - Library Book Management
 # 07-06-2023
 
-import time
-
 # Global Declarations
 welcome_message = True
 logic_continue = True
@@ -192,7 +190,7 @@ class library_functions:
                 print()
         return sort_result
     
-# We may add logic to the constructor later
+# Create a memory reference to class for instance object
 library_reference = library_functions()
 
 # Perform a while loop until exit
