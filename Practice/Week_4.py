@@ -140,18 +140,62 @@
 # dick={}
 # print(type(dick))
 
-import time 
-seconds_for_sleep = 4
-name = str(input("Username"))
-time.sleep(int(seconds_for_sleep))
-print("See! This fuction waited", seconds_for_sleep," seconds!`enter code here`")
+# import time 
+# seconds_for_sleep = 4
+# name = str(input("Username"))
+# time.sleep(int(seconds_for_sleep))
+# print("See! This fuction waited", seconds_for_sleep," seconds!`enter code here`")
 
+# class Sales:
+#     def __init__(self, id):
+#         self.id = id
+#         id = 100
 
+# val = Sales(123)
+# print (val.id)
 
+# s = "\t\tWelcome\n"
+# print(s.strip())
 
+# class Person:
+#     def __init__(self, id):
+#         self.id = id
 
+# sam = Person(100)
+# sam.__dict__['age'] = 49
+# print (sam.age + len(sam.__dict__))
 
+# class A:
+#     def __init__(self, i = 0):
+#         self.i = i
 
+# class B(A):
+#     def __init__(self, j = 0):
+#         self.j = j
+
+# def main():
+#     b = B()
+#     print(b.i)
+#     print(b.j)
+
+# main()
+
+# class A:
+#     def __init__(self):
+#         self.calcI(30)
+#         print("i from A is", self.i)
+
+#     def calcI(self, i):
+#         self.i = 2 * i;
+
+# class B(A):
+#     def __init__(self):
+#         super().__init__()
+        
+#     def calcI(self, i):
+#         self.i = 3 * i;
+
+# b = B()
 
 
 
