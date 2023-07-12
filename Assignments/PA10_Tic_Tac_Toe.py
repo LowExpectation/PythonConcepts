@@ -51,7 +51,13 @@ class tic_tak_toe:
     def __init__(instance) -> None:
         # Print the header
         print()
-        print("*****T i c  T a c  T o e*****")
+        print(
+        """
+          ___                 ___  
+         (o o)               (o o) 
+        (  V  ) Tic Tax Toe (  V  )
+        --m-m-----------------m-m--
+        """)
         print()
 
         # Gameboard Dictionary initialize
@@ -79,39 +85,40 @@ class tic_tak_toe:
         | {} | {} | {} | """
 
         return output.format(
-            instance.gameboard_dictionary["1"],  # "1A"],
-            instance.gameboard_dictionary["2"],  # "1B"],
-            instance.gameboard_dictionary["3"],  # "1C"],
-            instance.gameboard_dictionary["4"],  # "2A"],
-            instance.gameboard_dictionary["5"],  # "2B"],
-            instance.gameboard_dictionary["6"],  # "2C"],
-            instance.gameboard_dictionary["7"],  # "3A"],
-            instance.gameboard_dictionary["8"],  # "3B"],
-            instance.gameboard_dictionary["9"],  # "3C"],
+            instance.gameboard_dictionary["1"],
+            instance.gameboard_dictionary["2"],
+            instance.gameboard_dictionary["3"],
+            instance.gameboard_dictionary["4"],
+            instance.gameboard_dictionary["5"],
+            instance.gameboard_dictionary["6"],
+            instance.gameboard_dictionary["7"],
+            instance.gameboard_dictionary["8"],
+            instance.gameboard_dictionary["9"],
         )
 
     def __repr__(self) -> str:
         # Maybe putting a scordboard in here in the future?
         pass
 
-    def players(instance):
+    def players(instance) -> None:
         # Get inputs for players
+        print()
         instance.player1 = input("Please enter player 1 name: ")
-        instance.player2 = input("Please enter player 2 name: ")
-
         # Do validations P1
-        if instance.player1 == "":
-            while instance.player1 == "":
-                print("Player 1 name must not be blank.")
-                instance.player1 = input("Please enter player 1 name: ")
+        while instance.player1 == "":
+            print()
+            print("Player 1 name must not be blank.")
+            instance.player1 = input("Please enter player 1 name: ")
 
+        print()
+        instance.player2 = input("Please enter player 2 name: ")
         # Do validations P2
-        if instance.player2 == "":
-            while instance.player2 == "":
-                print("Player 2 name must not be blank.")
-                instance.player2 = input("Please enter player 2 name: ")
+        while instance.player2 == "":
+            print()
+            print("Player 2 name must not be blank.")
+            instance.player2 = input("Please enter player 2 name: ")
 
-    def play_order(instance):
+    def play_order(instance) -> None:
         # Check p1 length against p2
         # If equal or greater than, the else will occur
         # X goes first, O goes second
@@ -125,7 +132,7 @@ class tic_tak_toe:
             instance.p2_symbol = "X"
             instance.current_turn = "p2"
 
-    def is_board_full(instance):
+    def is_board_full(instance) -> bool:
         # Create a Bool variable
         board_not_full = False
 
@@ -136,8 +143,8 @@ class tic_tak_toe:
 
         return board_not_full
 
-    def fill_board(instance):
-        pick_helper = "{}, please pick a square 1-9, left to right"
+    def fill_board(instance) -> None:
+        pick_helper = "{} ({}), please pick a square 1-9, left to right"
         # Get player turn and set the next turn
         if instance.current_turn == "p1":
             player = instance.player1
@@ -150,7 +157,7 @@ class tic_tak_toe:
 
         # add a value to the board and validate
         print()
-        print(pick_helper.format(player))
+        print(pick_helper.format(player,symbol))
         selected_square = input("Square number: ")
 
         # Check digit, and range values
@@ -162,122 +169,82 @@ class tic_tak_toe:
         ):
             print()
             print("Please pick a valid square")
-            print(pick_helper.format(player))
+            print(pick_helper.format(player,symbol))
             selected_square = input("Square number: ")
         else:
             instance.gameboard_dictionary[selected_square] = symbol
 
-    def check_board(instance):
-        # Check horizontal P1 winning condition
-        if (
+    def check_board(instance) -> bool:
+        # Check players entries to see if game should continue or win status occured
+        if tic_tak_toe.check_horizontal(instance,instance.p1_symbol,instance.player1):
+            return True
+        if tic_tak_toe.check_vertical(instance,instance.p1_symbol,instance.player1):
+            return True
+        if tic_tak_toe.check_diagonal(instance,instance.p1_symbol,instance.player1):
+            return True
+        if tic_tak_toe.check_horizontal(instance,instance.p2_symbol,instance.player2):
+            return True
+        if tic_tak_toe.check_vertical(instance,instance.p2_symbol,instance.player2):
+            return True
+        if tic_tak_toe.check_diagonal(instance,instance.p2_symbol,instance.player2):
+            return True
+    def check_horizontal(instance,symbol,*player) -> bool:
+        # Check horizontal P2 winning condition
+         if (
             (
-                instance.gameboard_dictionary["1"] == instance.p1_symbol
-                and instance.gameboard_dictionary["2"] == instance.p1_symbol
-                and instance.gameboard_dictionary["3"] == instance.p1_symbol
+                instance.gameboard_dictionary["1"] == symbol
+                and instance.gameboard_dictionary["2"] == symbol
+                and instance.gameboard_dictionary["3"] == symbol
             )
             or (
-                instance.gameboard_dictionary["4"] == instance.p1_symbol
-                and instance.gameboard_dictionary["5"] == instance.p1_symbol
-                and instance.gameboard_dictionary["6"] == instance.p1_symbol
+                instance.gameboard_dictionary["4"] == symbol
+                and instance.gameboard_dictionary["5"] == symbol
+                and instance.gameboard_dictionary["6"] == symbol
             )
             or (
-                instance.gameboard_dictionary["7"] == instance.p1_symbol
-                and instance.gameboard_dictionary["8"] == instance.p1_symbol
-                and instance.gameboard_dictionary["9"] == instance.p1_symbol
+                instance.gameboard_dictionary["7"] == symbol
+                and instance.gameboard_dictionary["8"] == symbol
+                and instance.gameboard_dictionary["9"] == symbol
             )
         ):
-            instance.winning_player = instance.player1
+            instance.winning_player = ''.join(player)
             return True
-
+    
+    def check_vertical(instance,symbol,*player) -> bool:
         # Check Vertical P1 Winning Condition
         if (
             (
-                instance.gameboard_dictionary["1"] == instance.p1_symbol
-                and instance.gameboard_dictionary["4"] == instance.p1_symbol
-                and instance.gameboard_dictionary["7"] == instance.p1_symbol
+                instance.gameboard_dictionary["1"] == symbol
+                and instance.gameboard_dictionary["4"] == symbol
+                and instance.gameboard_dictionary["7"] == symbol
             )
             or (
-                instance.gameboard_dictionary["2"] == instance.p1_symbol
-                and instance.gameboard_dictionary["5"] == instance.p1_symbol
-                and instance.gameboard_dictionary["8"] == instance.p1_symbol
+                instance.gameboard_dictionary["2"] == symbol
+                and instance.gameboard_dictionary["5"] == symbol
+                and instance.gameboard_dictionary["8"] == symbol
             )
             or (
-                instance.gameboard_dictionary["3"] == instance.p1_symbol
-                and instance.gameboard_dictionary["6"] == instance.p1_symbol
-                and instance.gameboard_dictionary["9"] == instance.p1_symbol
+                instance.gameboard_dictionary["3"] == symbol
+                and instance.gameboard_dictionary["6"] == symbol
+                and instance.gameboard_dictionary["9"] == symbol
             )
         ):
-            instance.winning_player = instance.player1
+            instance.winning_player = ''.join(player)
             return True
-
-            # Check diagonal P1 winning condition
+    
+    def check_diagonal(instance,symbol,*player) -> bool:
+        # Check diagonal P1 winning condition
         if (
-            instance.gameboard_dictionary["1"] == instance.p1_symbol
-            and instance.gameboard_dictionary["5"] == instance.p1_symbol
-            and instance.gameboard_dictionary["9"] == instance.p1_symbol
+            instance.gameboard_dictionary["1"] == symbol
+            and instance.gameboard_dictionary["5"] == symbol
+            and instance.gameboard_dictionary["9"] == symbol
         ) or (
-            instance.gameboard_dictionary["3"] == instance.p1_symbol
-            and instance.gameboard_dictionary["5"] == instance.p1_symbol
-            and instance.gameboard_dictionary["7"] == instance.p1_symbol
+            instance.gameboard_dictionary["3"] == symbol
+            and instance.gameboard_dictionary["5"] == symbol
+            and instance.gameboard_dictionary["7"] == symbol
         ):
-            instance.winning_player = instance.player1
-            return True
-
-            # Check horizontal P2 winning condition
-        if (
-            (
-                instance.gameboard_dictionary["1"] == instance.p2_symbol
-                and instance.gameboard_dictionary["2"] == instance.p2_symbol
-                and instance.gameboard_dictionary["3"] == instance.p2_symbol
-            )
-            or (
-                instance.gameboard_dictionary["4"] == instance.p2_symbol
-                and instance.gameboard_dictionary["5"] == instance.p2_symbol
-                and instance.gameboard_dictionary["6"] == instance.p2_symbol
-            )
-            or (
-                instance.gameboard_dictionary["7"] == instance.p2_symbol
-                and instance.gameboard_dictionary["8"] == instance.p2_symbol
-                and instance.gameboard_dictionary["9"] == instance.p2_symbol
-            )
-        ):
-            instance.winning_player = instance.player1
-            return True
-
-        # Check Vertical P2 Winning Condition
-        if (
-            (
-                instance.gameboard_dictionary["1"] == instance.p2_symbol
-                and instance.gameboard_dictionary["4"] == instance.p2_symbol
-                and instance.gameboard_dictionary["7"] == instance.p2_symbol
-            )
-            or (
-                instance.gameboard_dictionary["2"] == instance.p2_symbol
-                and instance.gameboard_dictionary["5"] == instance.p2_symbol
-                and instance.gameboard_dictionary["8"] == instance.p2_symbol
-            )
-            or (
-                instance.gameboard_dictionary["3"] == instance.p2_symbol
-                and instance.gameboard_dictionary["6"] == instance.p2_symbol
-                and instance.gameboard_dictionary["9"] == instance.p2_symbol
-            )
-        ):
-            instance.winning_player = instance.player1
-            return True
-
-            # Check diagonal P2 winning condition
-        if (
-            instance.gameboard_dictionary["1"] == instance.p2_symbol
-            and instance.gameboard_dictionary["5"] == instance.p2_symbol
-            and instance.gameboard_dictionary["9"] == instance.p2_symbol
-        ) or (
-            instance.gameboard_dictionary["3"] == instance.p2_symbol
-            and instance.gameboard_dictionary["5"] == instance.p2_symbol
-            and instance.gameboard_dictionary["7"] == instance.p2_symbol
-        ):
-            instance.winning_player = instance.player1
-            return True
-
+            instance.winning_player = ''.join(player)
+            return True    
 
 # Instantiate object
 ttt_ref = tic_tak_toe()
@@ -300,4 +267,6 @@ while ttt_ref.is_board_full():
         break
 # When board is full but no winner then its a tie
 else:
-    print(ttt_ref.player1, "and", ttt_ref.player2, "tied")
+    print(str(ttt_ref))
+    print()
+    print(ttt_ref.player1, "and", ttt_ref.player2, "tied!")
