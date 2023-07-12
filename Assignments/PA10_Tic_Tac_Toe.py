@@ -55,7 +55,7 @@ class tic_tak_toe:
         """
           ___                 ___  
          (o o)               (o o) 
-        (  V  ) Tic Tax Toe (  V  )
+        (  V  ) Tic Tak Toe (  V  )
         --m-m-----------------m-m--
         """)
         print()

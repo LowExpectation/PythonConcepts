@@ -103,3 +103,26 @@
 # Caleb Woods
 # PA11 - Number Guessing Game
 # 07-16-2023
+
+import random
+class number_guessing:
+    def __init__(instance) -> None:
+        instance.number_to_guess=random.randrange(1,100)
+        
+    def __str__(instance) -> str:
+        pass
+    def __repr__(instance) -> str:
+        pass
+    def guess_helper(instance) -> bool: 
+        if instance.guessed_number==instance.number_to_guess:
+            return True
+            pass
+    def user_guess(instance)-> bool:
+        instance.guessed_number=input("Please Guess")
+        pass
+    
+ngg_ref=number_guessing()
+
+while ngg_ref.guess_helper():
+    
+    pass
