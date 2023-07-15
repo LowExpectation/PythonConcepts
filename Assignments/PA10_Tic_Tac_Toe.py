@@ -1,50 +1,7 @@
-# PA10- Tic-Tac-Toe
-
-# OK, you're going to build your first game using Python Dictionaries.
-# For the record, this will probably not be a program you get wealthy from,
-# but it could be a start.
-
-# This project incorporates much of what you've learned already in this semester.
-# In addition to working with Dictionaries, you'll add conditional logic and
-# list elements to your code.
-
-# This matrix is your typical Tic-Tac-Toe game structure -
-# three rows (1,2,3) and three columns (A,B,C). The game then has nine cells in the matrix.
-
-# 1A | 1B | 1C
-
-# 2A | 2B | 2C
-
-# 3A | 3B | 3C
-
-# Each cell in the matrix represents a Dictionary Key.
-# Each Key will contain a value of "None" to begin the game.
-# There will be two people playing the game.
-# Each player will be asked to enter his or her first name before the game begins.
-# The program will designate the player whose first name has the least number -
-# of characters as the first to place an "X" in a matrix cell.
-# The other play follows placing an "O" in their first cell.
-
-# You will receive all 50 points for this project if your program enables -
-# the two users to fill each cell and exit the program when all cells have -
-# a value other than None.
-
-# BONUS! You'll receive another 25 points if your program -
-# identifies the person who has won the game by getting three of their Xs or Os in a row.
-
-# Save the program in a file named Tic_Tac_Toe.py and -
-# attach that Tic_Tac_Toe.py file to this assignment.
-
-# Add the required comments to top of your .py file:
-
-# Include comments in your code following industry standards.
-# Not including comments in your code or random comments that do
-# not pertain to your code will result in points being deducted.
-# Comments inside code are a requirement for most software development businesses.
-
 # Caleb Woods
 # PA 10 - Tic-Tac-Toe
 # 07-16-2023
+
 class tic_tak_toe:
     def __init__(instance) -> None:
         # Print the header
