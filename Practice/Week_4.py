@@ -198,8 +198,13 @@
 # b = B()
 
 
+my_var = "  Hello   "
+_myvar = 'Hello'
+Myvar = 2.8
+print(type(my_var))
 
+print("Hello"[0]) 
+print(my_var.replace("H","J"))
 
-
-
-
+if Myvar ==  my_var:
+    pass
