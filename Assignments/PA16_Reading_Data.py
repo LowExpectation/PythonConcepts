@@ -30,6 +30,5 @@
 # do not pertain to your code will result in points being deducted.
 # Comments inside code are a requirement for most software development businesses. 
 
-# Caleb Woods
 # PA 16 - Reading Data
 # 07-16-2023
