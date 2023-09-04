@@ -1,6 +1,6 @@
 # PA01
 # 06/04/2023
-user_name = "Caleb Woods"
+user_name = "User"
 fav_song = "Rachmaninoff - liebesleid , or Chopin - No. 1"
 fav_movie = "A Silent Voice , or The Matrix"
 fav_food = "50/50 pork/beef burger with cheese and Jalapeno"
