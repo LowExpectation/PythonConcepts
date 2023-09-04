@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA09 - common elements
 # 06/23/2023
 

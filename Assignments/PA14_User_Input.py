@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA 14 - User Input
 # 07-16-2023
 

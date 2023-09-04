@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA01
 # 06/04/2023
 user_name = "Caleb Woods"

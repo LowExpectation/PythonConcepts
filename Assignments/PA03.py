@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA03: Convert Temperatures to and from Celsius, Fahrenheit.
 # 07/03/2023
 

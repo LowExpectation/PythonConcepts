@@ -3,7 +3,7 @@
 # 07/03/2023
 
 i = 0
-a = "MaricopaCommunityColleges"
+a = "PythonWhileLooping"
 
 while i == 0:
     for letter in a:

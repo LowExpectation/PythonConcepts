@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA 12 - Employee Data
 # 07-16-2023
 

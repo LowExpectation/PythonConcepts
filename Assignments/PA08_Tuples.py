@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA08 - Tuples
 # 06/22/2023
 

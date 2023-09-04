@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA11 - Number Guessing Game
 # 07-16-2023
 

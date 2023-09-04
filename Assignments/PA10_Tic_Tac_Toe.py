@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA 10 - Tic-Tac-Toe
 # 07-16-2023
 

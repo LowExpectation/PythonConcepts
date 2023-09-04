@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA 18 - Library Book Management
 # 07-06-2023
 

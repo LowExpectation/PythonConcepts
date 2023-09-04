@@ -1,4 +1,3 @@
-# Caleb Woods
 # PA07- Python For Loop
 # 07/03/2023
 
