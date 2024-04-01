@@ -1,7 +1,6 @@
 # PythonPractice
 
 This repository is just a listing of Python practices I have completed in my personal time.
-I have many more but sharing my personal batch scripts isnt going to be helpful for anyone.
+These were meant to be a fun way to jump into Python coding language.
 
-Feel free to browse or even suggest changes, I will keep refactoring as I get time.
-My work does not allow posting to GitHub repositories so the majority of my work is locked behind corporate security policies.
+Give them a try and add your own logic!
